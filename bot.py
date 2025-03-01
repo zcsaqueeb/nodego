@@ -1,5 +1,5 @@
 from curl_cffi import requests
-from fake_useragent import FakeUserAgent
+from fake_useragent import FakeUser Agent
 from datetime import datetime
 from colorama import *
 import asyncio, base64, json, os, pytz
@@ -16,7 +16,7 @@ class NodeGo:
             "Sec-Fetch-Dest": "empty",
             "Sec-Fetch-Mode": "cors",
             "Sec-Fetch-Site": "same-site",
-            "User-Agent": FakeUserAgent().random
+            "User -Agent": FakeUser Agent().random
         }
         self.proxies = []
         self.proxy_index = 0
@@ -131,38 +131,11 @@ class NodeGo:
         )
 
     def print_question(self):
-        while True:
-            try:
-                print("1. Run With Monosans Proxy")
-                print("2. Run With Private Proxy")
-                print("3. Run Without Proxy")
-                choose = int(input("Choose [1/2/3] -> ").strip())
+        # Automatically choose option 3 (Run Without Proxy)
+        choose = 3
+        print(f"{Fore.GREEN + Style.BRIGHT}Run Without Proxy Selected.{Style.RESET_ALL}")
 
-                if choose in [1, 2, 3]:
-                    proxy_type = (
-                        "Run With Monosans Proxy" if choose == 1 else 
-                        "Run With Private Proxy" if choose == 2 else 
-                        "Run Without Proxy"
-                    )
-                    print(f"{Fore.GREEN + Style.BRIGHT}{proxy_type} Selected.{Style.RESET_ALL}")
-                    break
-                else:
-                    print(f"{Fore.RED + Style.BRIGHT}Please enter either 1, 2 or 3.{Style.RESET_ALL}")
-            except ValueError:
-                print(f"{Fore.RED + Style.BRIGHT}Invalid input. Enter a number (1, 2 or 3).{Style.RESET_ALL}")
-
-        nodes_count = 0
-        if choose in [1, 2]:
-            while True:
-                try:
-                    nodes_count = int(input("How Many Nodes Do You Want to Run For Each Account? -> "))
-                    if nodes_count > 0:
-                        break
-                    else:
-                        print(f"{Fore.RED+Style.BRIGHT}Please enter a positive number.{Style.RESET_ALL}")
-                except ValueError:
-                    print(f"{Fore.RED+Style.BRIGHT}Invalid input. Enter a number.{Style.RESET_ALL}")
-
+        nodes_count = 0  # No need to ask for nodes_count since we are not using proxies
         return nodes_count, choose
 
     async def user_data(self, token: str, email: str, use_proxy: bool, proxy=None, retries=5):
@@ -288,7 +261,7 @@ class NodeGo:
             "Sec-Fetch-Mode": "cors",
             "Sec-Fetch-Site": "none",
             "Sec-Fetch-Storage-Access": "active",
-            "User-Agent": FakeUserAgent().random
+            "User -Agent": FakeUser Agent().random
         }
         for attempt in range(retries):
             try:
