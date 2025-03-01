@@ -1,8 +1,8 @@
 # NodeGo BOT
 NodeGo BOT
 
-- Register Here : [NodeGo](https://app.nodego.ai/r/NODE006C20BE0B8A)
-- Use Code : NODE006C20BE0B8A
+- Register Here : [NodeGo](https://app.nodego.ai/r/NODE23C23D75443D)
+- Use Code : NODE23C23D75443D
 
 ## Features
 
