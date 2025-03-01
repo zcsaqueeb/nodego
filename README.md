@@ -20,9 +20,9 @@ Note:
 1. Only running 1 node if run without proxy.
 2. If there is an error. Please first find out the meaning of the error with the status code displayed. if the error is with status code 500 or higher. The problem is on the project server. Some of you opened an issue and complained that there was an error with status code 502 and told me to update the bot. Hey sir, are you kidding me?
 
-# How to Get Teneo Access Token
+# How to Get NodeGO Access Token
 
-1. Open your browser and login to the TENEO dashboard.
+1. Open your browser and login to the NodeGo dashboard.
 2. Press `F12` to open the **Inspect Elements** panel.
 3. Go to the **Console** tab and paste the following code:
 
